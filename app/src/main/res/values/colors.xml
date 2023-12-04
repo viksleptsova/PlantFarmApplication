@@ -12,5 +12,6 @@
     <color name="light_green">#DCEFE4</color>
     <color name="active_btn">#1FA214</color>
     <color name="dark_green">#475645</color>
-
+    <color name="back_green">#63A57E</color>
+    <color name="light_green_100">#E3E8E5</color>
 </resources>

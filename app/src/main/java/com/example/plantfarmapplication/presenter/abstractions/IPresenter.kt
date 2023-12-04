@@ -1,5 +1,7 @@
 package com.example.plantfarmapplication.presenter.abstractions
 
-interface IFieldPresenter<TView> {
+interface IPresenter<TView> {
     fun onViewCreated(view : TView)
+
+    fun onDestroy()
 }

@@ -11,6 +11,7 @@ import com.example.plantfarmapplication.R
 import com.example.plantfarmapplication.model.objects.Field
 import com.example.plantfarmapplication.presenter.FieldsPresenter
 import com.example.plantfarmapplication.view.abstractions.IFieldsActivityView
+import com.example.plantfarmapplication.view.fieldinfoactivity.FieldInformationActivity
 import com.example.plantfarmapplication.view.plantsactivity.PlantsActivity
 import com.example.plantfarmapplication.view.requestsactivity.RequestsActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -46,6 +47,8 @@ class FieldsActivity : AppCompatActivity(), IFieldsActivityView {
             true
         }
 
+
+
         presenter.onViewCreated(this)
     }
 
@@ -75,9 +78,15 @@ class FieldsActivity : AppCompatActivity(), IFieldsActivityView {
         startActivity(intent)
     }
 
+    override fun startFieldInformationActivity(field: Field) {
+        val intent = Intent(this, FieldInformationActivity::class.java)
+        startActivity(intent)
+        }
+
     private lateinit var recyclerView: RecyclerView
     private lateinit var searchView: SearchView
     private lateinit var navBar: BottomNavigationView
     private val presenter = FieldsPresenter()
     private val adapter = FieldsAdapter(presenter)
+
 }

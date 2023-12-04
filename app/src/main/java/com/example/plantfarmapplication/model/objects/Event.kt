@@ -1,7 +1,7 @@
 package com.example.plantfarmapplication.model.objects
 
-class Field (
+class Event (
     val id: Int,
-    val fieldName: String,
-    val plantsCount: Int
-)
+    val eventName: String,
+    val eventDate: String
+    )
