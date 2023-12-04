@@ -1,15 +1,13 @@
 package com.example.plantfarmapplication.model.services
 
+import com.example.plantfarmapplication.model.abstractions.IEventPlant
 import com.example.plantfarmapplication.model.abstractions.IEventsService
 import com.example.plantfarmapplication.model.objects.Event
 
 class EventsService : IEventsService {
-    override val events: List<Event>
-        get() = listOf(Event(1, "Прополка", "16.10.23"),
-            Event(2, "Прополка", "16.10.23"),
-            Event(3, "Прополка", "16.10.23"),
-            Event(4, "Прополка", "16.10.23"),
-        )
+    override val map: Map<Int, Array<IEventPlant>>
+        get() = _map
+
 
     override var currentClickedDate: Int
         get() = _currentClickedDate
@@ -17,5 +15,6 @@ class EventsService : IEventsService {
             _currentClickedDate = value
         }
 
+    private lateinit var _map: Map<Int, Array<IEventPlant>>
     private var _currentClickedDate = 0
 }

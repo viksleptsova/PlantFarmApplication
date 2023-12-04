@@ -6,9 +6,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.plantfarmapplication.R
 import com.example.plantfarmapplication.model.objects.Field
 import com.example.plantfarmapplication.presenter.FieldsPresenter
+import com.example.plantfarmapplication.view.abstractions.IFieldsActivityView
 
 class FieldsViewHolder(private val presenter: FieldsPresenter, view: View) : RecyclerView.ViewHolder(view),
-    View.OnClickListener {
+    View.OnClickListener{
 
     fun onBind(field: Field) {
         fieldName = itemView.findViewById(R.id.fieldName)
@@ -28,11 +29,14 @@ class FieldsViewHolder(private val presenter: FieldsPresenter, view: View) : Rec
         plantsCount.text = "Количество культур:" + field.plantsCount.toString()
     }
 
+
     fun onCleanUp() {
         itemView.setOnClickListener(null)
     }
 
+
     private lateinit var fieldName: TextView
     private lateinit var plantsCount: TextView
+
 
 }

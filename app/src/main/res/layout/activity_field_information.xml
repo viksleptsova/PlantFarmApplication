@@ -40,7 +40,6 @@
         android:id="@+id/fieldName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="6. Матка"
         android:layout_margin="20dp"
         android:theme="@style/Theme.PlantFarmApplication.TitleTextView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,10 +47,9 @@
         app:layout_constraintTop_toTopOf="@+id/appCompatImageView" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/plantsCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Количество культур: 100"
         android:theme="@style/Theme.PlantFarmApplication.FieldTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -61,15 +59,36 @@
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3"
-        app:layout_constraintBottom_toTopOf="@+id/tab_layout"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        android:layout_margin="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/addButton"
+        app:layout_constraintTop_toBottomOf="@+id/plantsCount"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/addButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/add_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tab_layout" />
+
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/tab_layout_bg"
         app:layout_constraintBottom_toBottomOf="parent"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tabIndicator="@drawable/tab_indicator"
+        app:tabIndicatorAnimationMode="elastic"
+        app:tabIndicatorColor="@color/purple_200"
+        app:tabIndicatorHeight="40dp"
+        app:tabMode="auto"
+        app:tabSelectedTextColor="@color/white"
+        app:tabTextColor="@color/purple_200" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

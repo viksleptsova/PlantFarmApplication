@@ -78,8 +78,8 @@ class FieldsActivity : AppCompatActivity(), IFieldsActivityView {
         startActivity(intent)
     }
 
-    override fun startFieldInformationActivity(field: Field) {
-        val intent = Intent(this, FieldInformationActivity::class.java)
+    override fun startFieldInformationActivity() {
+        val intent = Intent(this, FieldInformationActivity()::class.java)
         startActivity(intent)
         }
 

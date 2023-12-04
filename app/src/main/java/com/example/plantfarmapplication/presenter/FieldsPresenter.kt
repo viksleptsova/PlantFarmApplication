@@ -11,7 +11,7 @@ class FieldsPresenter: IPresenter<IFieldsActivityView> {
     fun onItemClick(position: Int){
         currentClickedPosition = position
         App.fieldsService.currentClickedDate = position
-        view?.startFieldInformationActivity(fields[position])
+        view?.startFieldInformationActivity()
     }
 
 

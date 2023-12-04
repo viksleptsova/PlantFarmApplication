@@ -9,7 +9,7 @@
 
 
     <ImageView
-        android:id="@+id/plantsEventsImageView"
+        android:id="@+id/plantsImageView"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_margin="10dp"
@@ -18,27 +18,27 @@
         tools:layout_editor_absoluteX="10dp" />
 
     <TextView
-        android:id="@+id/plantOrEventName"
+        android:id="@+id/plantName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:textSize="20sp"
         android:fontFamily="@font/open_sans_condensed_bold"
-        app:layout_constraintStart_toStartOf="@id/plantsEventsImageView"
-        app:layout_constraintTop_toTopOf="@id/plantsEventsImageView"
-        app:layout_constraintBottom_toBottomOf="@id/plantsEventsImageView"
-       />
+        app:layout_constraintStart_toStartOf="@id/plantsImageView"
+        app:layout_constraintTop_toTopOf="@id/plantsImageView"
+        app:layout_constraintBottom_toBottomOf="@id/plantsImageView"
+        />
 
     <TextView
-        android:id="@+id/dateOrCount"
+        android:id="@+id/plantCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:textSize="10sp"
+        android:textSize="12sp"
         android:fontFamily="@font/open_sans_condensed_bold"
-        app:layout_constraintEnd_toEndOf="@id/plantsEventsImageView"
-        app:layout_constraintTop_toTopOf="@id/plantsEventsImageView"
-        app:layout_constraintBottom_toBottomOf="@id/plantsEventsImageView"
+        app:layout_constraintEnd_toEndOf="@id/plantsImageView"
+        app:layout_constraintTop_toTopOf="@id/plantsImageView"
+        app:layout_constraintBottom_toBottomOf="@id/plantsImageView"
         />
 
 
