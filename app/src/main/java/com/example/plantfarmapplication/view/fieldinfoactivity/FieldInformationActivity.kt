@@ -21,6 +21,9 @@ class FieldInformationActivity () : AppCompatActivity(), View.OnClickListener {
         backButton = findViewById(R.id.backButton)
         backButton.setOnClickListener(this)
 
+        addButton = findViewById(R.id.addButton)
+        addButton.setOnClickListener(this)
+
         fieldName = findViewById(R.id.fieldName)
         plantsCount = findViewById(R.id.plantsCount)
 
@@ -39,9 +42,9 @@ class FieldInformationActivity () : AppCompatActivity(), View.OnClickListener {
         setText(App.fieldsService.fields[App.fieldsService.currentClickedDate])
     }
 
-    fun setText(field: Field){
+    private fun setText(field: Field){
         fieldName.text = field.fieldName
-        plantsCount.text = "Количество культур" + field.plantsCount.toString()
+        plantsCount.text = "Количество культур: " + field.plantsCount.toString()
     }
 
     override fun onClick(view: View?) {
@@ -51,15 +54,21 @@ class FieldInformationActivity () : AppCompatActivity(), View.OnClickListener {
         if(view == backButton){
             onBackPressedDispatcher.onBackPressed()
         }
+        if (view == addButton){
+
+        }
     }
 
     private val titleList = listOf("Культуры","Мероприятия")
     private lateinit var backButton: Button
+    private lateinit var addButton: Button
+
     private lateinit var viewPager: ViewPager2
     private lateinit var adapter: PlantsEventsAdapter
     private lateinit var tabLayout: TabLayout
     private lateinit var fieldName: TextView
     private lateinit var plantsCount: TextView
+
     private val presenter = PlantsEventsFragmentPresenter()
 
 }

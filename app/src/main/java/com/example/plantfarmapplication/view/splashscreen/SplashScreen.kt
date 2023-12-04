@@ -1,4 +1,4 @@
-package com.example.plantfarmapplication.view
+package com.example.plantfarmapplication.view.splashscreen
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
