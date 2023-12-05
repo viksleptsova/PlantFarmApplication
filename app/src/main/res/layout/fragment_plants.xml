@@ -9,7 +9,7 @@
         android:id="@+id/plantImage"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:layout_margin="20dp"
+        android:layout_marginStart="20dp"
         android:elevation="5dp"
         android:src="@drawable/plant8"
         app:layout_constraintBottom_toBottomOf="@id/plantImageView"
@@ -21,7 +21,6 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_margin="10dp"
-        android:layout_marginTop="8dp"
         android:src="@drawable/plants_events_rec"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="10dp" />
@@ -30,17 +29,17 @@
         android:layout_width="25dp"
         android:layout_height="30dp"
         android:src="@drawable/arrow"
-        android:layout_margin="20dp"
+        android:layout_marginEnd="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/plantImageView"
         app:layout_constraintEnd_toEndOf="@+id/plantImageView"
         app:layout_constraintTop_toTopOf="@+id/plantImageView" />
 
     <TextView
         android:id="@+id/plantName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="20dp"
         android:layout_marginTop="10dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="10dp"
         android:text="Черемуха Виргинская"
         android:textSize="16sp"
         android:fontFamily="@font/open_sans_semibold"
@@ -50,9 +49,9 @@
 
     <TextView
         android:id="@+id/latinPlantName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_width="250dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="10dp"
         android:textSize="12sp"
         android:fontFamily="@font/open_sans_semibold"
         android:text="Prunus virginiana"

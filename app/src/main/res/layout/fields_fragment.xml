@@ -20,11 +20,11 @@
 
     <TextView
         android:id="@+id/fieldName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="280dp"
+        android:layout_height="20dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="10dp"
-        android:textSize="16sp"
+        android:textSize="15sp"
         android:theme="@style/Theme.PlantFarmApplication.FieldTextView"
         app:layout_constraintStart_toStartOf="@id/fieldRectangle"
         app:layout_constraintTop_toTopOf="parent" />
@@ -46,7 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/arrow"
-        android:layout_margin="10dp"
+        android:layout_marginEnd="20dp"
         app:layout_constraintBottom_toBottomOf="@id/fieldRectangle"
         app:layout_constraintEnd_toEndOf="@id/fieldRectangle"
         app:layout_constraintTop_toTopOf="@id/fieldRectangle" />

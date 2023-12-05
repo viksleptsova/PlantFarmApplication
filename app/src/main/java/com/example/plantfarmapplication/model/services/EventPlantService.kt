@@ -12,20 +12,20 @@ class EventPlantService: IEventPlantService {
         get() = mapOf(App.fieldsService.fields[0].id to plantList, App.fieldsService.fields[1].id to plantList1)
 
     private var eventList: List<Event> = listOf(Event(1, "Прополка", "16.10.23"),
-        Event(2, "Обработка", "16.10.23"),
-        Event(3, "Прокопка", "16.10.23")
+        Event(2, "Обработка фунгицидом", "16.10.23")
     )
     private var plantList: List<Plant> = listOf(
-        Plant(1, 1, "Черемуха", 100),
+        Plant(1, 1, "Черемуха", 15),
         Plant(2, 2, "Барбарис", 70),
 
     )
 
-    private var eventList1: List<Event> = listOf(Event(2, "Обработка", "16.10.23")
+    private var eventList1: List<Event> = listOf(Event(2, "Прополка", "16.10.23")
     )
+
     private var plantList1: List<Plant> = listOf(
-        Plant(1, 1, "Черемуха", 100),
-        Plant(2, 2,"Ромашка", 70),
+        Plant(1, 1, "Черемуха", 20),
+        Plant(2, 2,"Рябина", 20),
         )
 
 
