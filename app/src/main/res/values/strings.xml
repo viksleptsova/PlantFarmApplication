@@ -5,4 +5,6 @@
     <string name="main_page">Главная страница</string>
     <string name="plants">База растений</string>
     <string name="welcome">Добро пожаловать!</string>
+    <string name="plants_lib">Библиотека растений</string>
+    <string name="requests_empty">Список заявок пуст</string>
 </resources>

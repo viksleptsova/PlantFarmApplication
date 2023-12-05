@@ -6,14 +6,14 @@ import com.example.plantfarmapplication.model.objects.Field
 class FieldsService() : IFieldService {
    override val fields: List<Field>
    get() = listOf(
-       Field(1, "6. Маточник", 47),
-       Field(2, "21. Посевочник", 50),
-       Field(3, "56. Поле", 200),
-       Field(4, "5. Теплица", 100),
-       Field(5, "6. Маточник", 47),
-       Field(6, "21. Посевочник", 50),
-       Field(7, "56. Поле", 200),
-       Field(8, "5. Теплица", 100),
+       Field(0, "6. Маточник", 47),
+       Field(1, "21. Посевочник", 50),
+       Field(2, "56. Поле", 200),
+       Field(3, "5. Теплица", 100),
+       Field(4, "6. Маточник", 47),
+       Field(5, "21. Посевочник", 50),
+       Field(6, "56. Поле", 200),
+       Field(7, "5. Теплица", 100),
     )
 
     override var currentClickedDate: Int

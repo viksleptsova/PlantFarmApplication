@@ -1,9 +1,9 @@
 package com.example.plantfarmapplication.model.objects
 
-import com.example.plantfarmapplication.model.abstractions.IEventPlant
+import com.example.plantfarmapplication.model.abstractions.IEventPlantService
 
-class Event (
+class Event(
     val id: Int,
     val eventName: String,
     val eventDate: String
-): IEventPlant
+)

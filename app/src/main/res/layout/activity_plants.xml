@@ -6,4 +6,54 @@
     android:layout_height="match_parent"
     tools:context=".view.plantsactivity.PlantsActivity">
 
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchPlants"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/search_rec"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:fontFamily="@font/open_sans_condensed_bold"
+        android:text="@string/plants_lib"
+        android:theme="@style/Theme.PlantFarmApplication.TitleTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchPlants" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/plantsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navBarInPlants"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        app:itemTextColor="@color/white"
+        android:textAlignment="center"
+        app:itemIconTint="@color/white"
+        app:itemRippleColor="@color/light_green"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/navigation_bar_rec"
+        app:menu="@menu/navigation_bar"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

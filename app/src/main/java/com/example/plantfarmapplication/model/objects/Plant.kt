@@ -1,10 +1,10 @@
 package com.example.plantfarmapplication.model.objects
 
-import com.example.plantfarmapplication.model.abstractions.IEventPlant
+import com.example.plantfarmapplication.model.abstractions.IEventPlantService
 
-class Plant (
+class Plant(
     val id: Int,
+    val pictureId: Int,
     val plantName: String,
     val plantCount: Int
 )
-    :IEventPlant

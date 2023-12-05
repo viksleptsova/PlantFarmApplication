@@ -9,13 +9,12 @@ import com.example.plantfarmapplication.presenter.PlantsEventsFragmentPresenter
 import com.example.plantfarmapplication.view.fieldinfoactivity.events.EventsFragment
 import com.example.plantfarmapplication.view.fieldinfoactivity.plants.PlantsFragment
 
-const val ARG_OBJECT = "object"
 class PlantsEventsAdapter(fragment: FragmentActivity, val presenter: PlantsEventsFragmentPresenter) : FragmentStateAdapter(fragment){
     override fun getItemCount(): Int = 2
 
     override fun createFragment(position: Int): Fragment {
         return when(position){
-            0 -> PlantsFragment()
+            1 -> PlantsFragment()
             else -> {EventsFragment()}
         }
     }

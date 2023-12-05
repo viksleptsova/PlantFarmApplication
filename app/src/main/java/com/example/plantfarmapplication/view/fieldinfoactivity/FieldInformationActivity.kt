@@ -48,9 +48,6 @@ class FieldInformationActivity () : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(view: View?) {
-        if(view == viewPager){
-            presenter.setTabLayoutPosition(tabLayout.selectedTabPosition)
-        }
         if(view == backButton){
             onBackPressedDispatcher.onBackPressed()
         }
