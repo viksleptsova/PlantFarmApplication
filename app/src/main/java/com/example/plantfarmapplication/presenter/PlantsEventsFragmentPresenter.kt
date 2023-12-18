@@ -16,16 +16,11 @@ class PlantsEventsFragmentPresenter : IPresenter<PlantsFragment> {
         view = null
     }
 
-    fun getTabLayoutPosition() : Int = index
-
-    fun setTabLayoutPosition(i: Int){
-        index = i
-    }
 
     private var view: PlantsFragment? = null
 
-    var plants: List<Plant> =  App.plantsService.plants
-    var events: List<Event> =  App.eventsService.events
+    var plants: List<Plant>? =  App.eventPlantService.fieldsPlantMap[App.fieldsService.currentClickedDate]
+    var events: List<Event>? = App.eventPlantService.fieldsEventMap.get(App.fieldsService.currentClickedDate)
     var index = 0
 
 }

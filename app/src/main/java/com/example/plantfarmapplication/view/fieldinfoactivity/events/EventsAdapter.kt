@@ -16,10 +16,10 @@ class EventsAdapter(private val presenter: PlantsEventsFragmentPresenter) :
     }
 
     override fun onBindViewHolder(holder: EventsViewHolder, position: Int) {
-        holder.onBind(presenter.events[position])
+        holder.onBind(presenter.events!![position])
     }
 
     override fun getItemCount(): Int {
-        return presenter.events.size
+        return presenter.events!!.size
     }
 }
