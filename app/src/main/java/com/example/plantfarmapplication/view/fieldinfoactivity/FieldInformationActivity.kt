@@ -48,9 +48,6 @@ class FieldInformationActivity () : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(view: View?) {
-        if(view == viewPager){
-            presenter.setTabLayoutPosition(tabLayout.selectedTabPosition)
-        }
         if(view == backButton){
             onBackPressedDispatcher.onBackPressed()
         }
@@ -59,7 +56,7 @@ class FieldInformationActivity () : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    private val titleList = listOf("Культуры","Мероприятия")
+    private val titleList = listOf("Мероприятия", "Культуры")
     private lateinit var backButton: Button
     private lateinit var addButton: Button
 

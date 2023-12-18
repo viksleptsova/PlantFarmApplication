@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.plantfarmapplication.R
-import com.example.plantfarmapplication.model.objects.Event
 import com.example.plantfarmapplication.model.objects.Plant
 import com.example.plantfarmapplication.presenter.PlantsEventsFragmentPresenter
 
@@ -26,7 +25,7 @@ class PlantsAdapter(private val presenter: PlantsEventsFragmentPresenter) :
     }
 
 
-    private var plantList: List<Plant> = presenter.plants
+    private var plantList: List<Plant> = presenter.plants!!
 
 
 }
