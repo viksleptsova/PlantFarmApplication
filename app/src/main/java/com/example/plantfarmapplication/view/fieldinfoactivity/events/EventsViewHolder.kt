@@ -18,7 +18,7 @@ class EventsViewHolder (private val presenter: PlantsEventsFragmentPresenter, vi
 
     private fun setEvents(event: Event){
         eventName.text = event.eventName
-        eventDate.text = event.eventDate
+        eventDate.text = event.eventDate.toString()
     }
 
 

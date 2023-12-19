@@ -1,5 +1,6 @@
 package com.example.plantfarmapplication.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.Delete
 import androidx.room.Query
 import androidx.room.Upsert
@@ -14,5 +15,5 @@ interface EventDao {
     suspend fun deleteEvent(event: Event)
 
     @Query("SELECT * from event")
-    fun getEvents(): List<Event>
+    fun getEvents(): LiveData<List<Event>>
 }

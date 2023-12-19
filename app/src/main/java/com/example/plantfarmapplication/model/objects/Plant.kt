@@ -2,7 +2,6 @@ package com.example.plantfarmapplication.model.objects
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.example.plantfarmapplication.model.abstractions.IEventPlant
 
 @Entity
 data class Plant (
@@ -19,4 +18,3 @@ data class Plant (
     @PrimaryKey(autoGenerate = true)
     val plantId: Int
 )
-    :IEventPlant

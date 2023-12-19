@@ -1,5 +1,6 @@
 package com.example.plantfarmapplication.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.Delete
 import androidx.room.Query
 import androidx.room.Upsert
@@ -14,5 +15,5 @@ interface RequestDao {
     suspend fun deleteRequest(request: Request)
 
     @Query("SELECT * from request")
-    fun getRequests(): List<Request>
+    fun getRequests(): LiveData<List<Request>>
 }

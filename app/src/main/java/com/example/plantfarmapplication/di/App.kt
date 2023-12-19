@@ -5,9 +5,19 @@ import com.example.plantfarmapplication.model.abstractions.*
 import com.example.plantfarmapplication.model.services.EventPlantService
 import com.example.plantfarmapplication.model.services.FieldsService
 import com.example.plantfarmapplication.model.services.PlantsInLibService
+import com.example.plantfarmapplication.repositories.EventRepository
+import com.example.plantfarmapplication.repositories.FieldRepository
+import com.example.plantfarmapplication.repositories.PlantRepository
+import com.example.plantfarmapplication.repositories.RequestRepository
 
 class App: Application() {
 
+    val database by lazy { Database.getInstance(this) }
+    val eventRepository by lazy { EventRepository(database.eventDao()) }
+    val fieldRepository by lazy { FieldRepository(database.fieldDao()) }
+    val plantRepository by lazy { PlantRepository(database.plantDao()) }
+    val requestRepository by lazy { RequestRepository(database.requestDao()) }
+    
     override fun onCreate() {
         super.onCreate()
         fieldsService = FieldsService()

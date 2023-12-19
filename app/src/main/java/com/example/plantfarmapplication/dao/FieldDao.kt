@@ -1,5 +1,6 @@
 package com.example.plantfarmapplication.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Query
@@ -17,5 +18,5 @@ interface FieldDao {
     suspend fun deleteField(field: Field)
 
     @Query("SELECT * from field")
-    fun getFields(): List<Field>
+    fun getFields(): LiveData<List<Field>>
 }
