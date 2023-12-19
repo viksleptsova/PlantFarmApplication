@@ -1,13 +1,16 @@
 package com.example.plantfarmapplication.view.plantsactivity
 
+import android.app.Application
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.plantfarmapplication.R
+import com.example.plantfarmapplication.di.App
 import com.example.plantfarmapplication.model.objects.Field
 import com.example.plantfarmapplication.model.objects.PlantsInLib
 import com.example.plantfarmapplication.presenter.FieldsPresenter
@@ -15,6 +18,8 @@ import com.example.plantfarmapplication.presenter.PlantsPresenter
 import com.example.plantfarmapplication.view.fieldsactivity.FieldsActivity
 import com.example.plantfarmapplication.view.fieldsactivity.FieldsAdapter
 import com.example.plantfarmapplication.view.requestsactivity.RequestsActivity
+import com.example.plantfarmapplication.viewmodels.PlantViewModel
+import com.example.plantfarmapplication.viewmodels.PlantViewModelFactory
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.util.*
 import kotlin.collections.ArrayList
@@ -22,6 +27,11 @@ import kotlin.collections.ArrayList
 // страница базы данных растений
 
 class PlantsActivity : AppCompatActivity() {
+
+    private val plantViewModel: PlantViewModel by viewModels {
+        PlantViewModelFactory((application as App).plantRepository)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_plants)
@@ -40,6 +50,10 @@ class PlantsActivity : AppCompatActivity() {
             true
         }
 
+        plantViewModel.allPlants.observe(this) { plants ->
+            // Update the cached copy of the words in the adapter.
+            plants.let { adapter.submitList(it) }
+        }
 
         searchView = findViewById(R.id.searchPlants)
         searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener{

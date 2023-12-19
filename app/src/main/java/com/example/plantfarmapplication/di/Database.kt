@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.plantfarmapplication.dao.EventDao
 import com.example.plantfarmapplication.dao.FieldDao
 import com.example.plantfarmapplication.dao.PlantDao
@@ -13,6 +14,8 @@ import com.example.plantfarmapplication.model.objects.Field
 import com.example.plantfarmapplication.model.objects.Plant
 import com.example.plantfarmapplication.model.objects.PlantsInLib
 import com.example.plantfarmapplication.model.objects.Request
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 import java.util.concurrent.Executors
 
 
@@ -46,6 +49,20 @@ abstract class Database: RoomDatabase() {
 
             fun destroyInstance() {
                 INSTANCE = null
+            }
+        }
+    }
+
+    private class WordDatabaseCallback(
+        private val scope: CoroutineScope
+    ) : RoomDatabase.Callback() {
+
+        override fun onCreate(db: SupportSQLiteDatabase) {
+            super.onCreate(db)
+            INSTANCE?.let { database ->
+                scope.launch {
+                    populateDatabase(database.wordDao())
+                }
             }
         }
     }
