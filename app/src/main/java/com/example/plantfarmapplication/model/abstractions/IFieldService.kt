@@ -1,9 +1,10 @@
 package com.example.plantfarmapplication.model.abstractions
 
+import androidx.lifecycle.LiveData
 import com.example.plantfarmapplication.model.objects.Field
 
 
 interface IFieldService {
-    val fields: List<Field>
+    val fields: LiveData<List<Field>>
     var currentClickedDate: Int
 }

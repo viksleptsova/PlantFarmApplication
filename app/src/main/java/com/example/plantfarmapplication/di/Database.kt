@@ -4,7 +4,13 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteDatabase
+import com.example.plantfarmapplication.converters.DateConverter
+import com.example.plantfarmapplication.converters.EventConverter
+import com.example.plantfarmapplication.converters.FieldConverter
+import com.example.plantfarmapplication.converters.PlantConverter
+import com.example.plantfarmapplication.converters.RequestConverter
 import com.example.plantfarmapplication.dao.EventDao
 import com.example.plantfarmapplication.dao.FieldDao
 import com.example.plantfarmapplication.dao.PlantDao
@@ -22,6 +28,8 @@ import java.util.concurrent.Executors
 @Database(
     entities = [Field::class, Plant::class, Event::class, Request::class, PlantsInLib::class],
     version = 1)
+@TypeConverters(PlantConverter::class, EventConverter::class, FieldConverter::class,
+    RequestConverter::class, DateConverter::class)
 abstract class Database: RoomDatabase() {
     abstract fun fieldDao(): FieldDao
     abstract fun plantDao(): PlantDao
@@ -40,7 +48,7 @@ abstract class Database: RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     com.example.plantfarmapplication.di.Database::class.java,
-                    "word_database"
+                    "plant_database"
                 ).build()
                 INSTANCE = instance
                 // return instance
@@ -49,20 +57,6 @@ abstract class Database: RoomDatabase() {
 
             fun destroyInstance() {
                 INSTANCE = null
-            }
-        }
-    }
-
-    private class WordDatabaseCallback(
-        private val scope: CoroutineScope
-    ) : RoomDatabase.Callback() {
-
-        override fun onCreate(db: SupportSQLiteDatabase) {
-            super.onCreate(db)
-            INSTANCE?.let { database ->
-                scope.launch {
-                    populateDatabase(database.wordDao())
-                }
             }
         }
     }

@@ -9,7 +9,7 @@ import com.example.plantfarmapplication.repositories.RequestRepository
 import kotlinx.coroutines.launch
 
 class RequestViewModel (private val repository: RequestRepository) : ViewModel() {
-    val allRequests: LiveData<List<Request>> = repository.allRequests.asLiveData()
+    val allRequests: LiveData<List<Request>> = repository.allRequests
 
     fun upsert(request: Request) = viewModelScope.launch {
         repository.upsert(request)

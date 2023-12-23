@@ -9,7 +9,7 @@ import com.example.plantfarmapplication.repositories.FieldRepository
 import kotlinx.coroutines.launch
 
 class FieldViewModel (private val repository: FieldRepository) : ViewModel() {
-    val allFields: LiveData<List<Field>> = repository.allFields.asLiveData()
+    val allFields: LiveData<List<Field>> = repository.allFields
 
     fun upsert(field: Field) = viewModelScope.launch {
         repository.upsert(field)

@@ -1,5 +1,6 @@
 package com.example.plantfarmapplication.presenter
 
+import androidx.lifecycle.LiveData
 import com.example.plantfarmapplication.di.App
 import com.example.plantfarmapplication.model.objects.Field
 import com.example.plantfarmapplication.presenter.abstractions.IPresenter
@@ -24,8 +25,8 @@ class FieldsPresenter: IPresenter<IFieldsActivityView> {
     }
 
     private var view: IFieldsActivityView? = null
-    var fields: List<Field> =  App.fieldsService.fields
-    var fieldsCount: Int = fields.size
+    var fields: LiveData<List<Field>> =  App.fieldsService.fields
+    var fieldsCount: Int = fields.value.size
 
     private var currentClickedPosition: Int = -1
 

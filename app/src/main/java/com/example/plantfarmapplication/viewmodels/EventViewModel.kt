@@ -9,7 +9,7 @@ import com.example.plantfarmapplication.repositories.EventRepository
 import kotlinx.coroutines.launch
 
 class EventViewModel (private val repository: EventRepository) : ViewModel() {
-    val allEvents: LiveData<List<Event>> = repository.allEvents.asLiveData()
+    val allEvents: LiveData<List<Event>> = repository.allEvents
 
     fun upsert(event: Event) = viewModelScope.launch {
         repository.upsert(event)

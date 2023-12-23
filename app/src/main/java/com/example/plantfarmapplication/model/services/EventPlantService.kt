@@ -1,12 +1,22 @@
 package com.example.plantfarmapplication.model.services
 
+import androidx.lifecycle.LiveData
+import com.example.plantfarmapplication.dao.EventDao
+import com.example.plantfarmapplication.dao.FieldDao
 import com.example.plantfarmapplication.di.App
 import com.example.plantfarmapplication.model.abstractions.IEventPlantService
 import com.example.plantfarmapplication.model.objects.Event
+import com.example.plantfarmapplication.model.objects.Field
 import com.example.plantfarmapplication.model.objects.Plant
+import kotlinx.coroutines.flow.Flow
+/*
+class EventPlantService(private val eventDao: EventDao, private val fieldDao: FieldDao): IEventPlantService {
+    override val fieldsEventMap: Flow<Map<Field, List<Event>>>
+        get() = mapOf(fieldDao.getFields().get(0).id to)
 
-class EventPlantService: IEventPlantService {
-    override val fieldsEventMap: Map<Int, List<Event>>
+    */
+
+    /*override val fieldsEventMap: Map<Int, List<Event>>
         get() = mapOf(App.fieldsService.fields[0].id to eventList, App.fieldsService.fields[1].id to eventList1, App.fieldsService.fields[4].id to eventList2)
     override val fieldsPlantMap: Map<Int, List<Plant>>
         get() = mapOf(App.fieldsService.fields[0].id to plantList, App.fieldsService.fields[1].id to plantList1,  App.fieldsService.fields[4].id to plantList2)
@@ -36,7 +46,6 @@ class EventPlantService: IEventPlantService {
         Plant(2, 2, "Барбарис", 15),
         Plant(2, 2, "Кустарник", 15)
 
-    )
+    )*/
 
 
-}

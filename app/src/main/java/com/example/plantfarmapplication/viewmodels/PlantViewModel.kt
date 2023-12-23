@@ -9,7 +9,7 @@ import com.example.plantfarmapplication.repositories.PlantRepository
 import kotlinx.coroutines.launch
 
 class PlantViewModel (private val repository: PlantRepository) : ViewModel() {
-    val allPlants: LiveData<List<Plant>> = repository.allPlants.asLiveData()
+    val allPlants: LiveData<List<Plant>> = repository.allPlants
 
     fun upsert(plant: Plant) = viewModelScope.launch {
         repository.upsert(plant)
