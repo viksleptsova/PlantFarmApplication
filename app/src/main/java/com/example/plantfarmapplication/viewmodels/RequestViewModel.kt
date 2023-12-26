@@ -3,13 +3,14 @@ package com.example.plantfarmapplication.viewmodels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.plantfarmapplication.model.objects.Request
 import com.example.plantfarmapplication.repositories.RequestRepository
 import kotlinx.coroutines.launch
 
 class RequestViewModel (private val repository: RequestRepository) : ViewModel() {
-    val allRequests: LiveData<List<Request>> = repository.allRequests
+    val allRequests: LiveData<List<Request>> = repository.allRequests.asLiveData()
 
     fun upsert(request: Request) = viewModelScope.launch {
         repository.upsert(request)

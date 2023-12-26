@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.Flow
 
 class FieldRepository(private val fieldDao: FieldDao) {
 
-    val allFields: LiveData<List<Field>> = fieldDao.getFields()
+    val allFields: Flow<List<Field>> = fieldDao.getFields()
 
     @Suppress("RedundantSuspendModifier")
     @WorkerThread

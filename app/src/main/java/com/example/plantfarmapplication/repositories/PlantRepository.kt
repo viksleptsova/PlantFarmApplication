@@ -4,11 +4,11 @@ import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
 import com.example.plantfarmapplication.dao.PlantDao
 import com.example.plantfarmapplication.model.objects.Plant
-import java.util.concurrent.Flow
+import kotlinx.coroutines.flow.Flow
 
 class PlantRepository(private val plantDao: PlantDao) {
 
-    val allPlants: LiveData<List<Plant>> = plantDao.getPlants()
+    val allPlants: Flow<List<Plant>> = plantDao.getPlants()
 
     @Suppress("RedundantSuspendModifier")
     @WorkerThread

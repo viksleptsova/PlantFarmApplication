@@ -6,6 +6,7 @@ import androidx.room.Delete
 import androidx.room.Query
 import androidx.room.Upsert
 import com.example.plantfarmapplication.model.objects.Request
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface RequestDao {
@@ -17,5 +18,5 @@ interface RequestDao {
     suspend fun deleteRequest(request: Request)
 
     @Query("SELECT * from request")
-    fun getRequests(): LiveData<List<Request>>
+    fun getRequests(): Flow<List<Request>>
 }

@@ -8,7 +8,7 @@ import com.example.plantfarmapplication.model.abstractions.IFieldService
 import com.example.plantfarmapplication.model.objects.Field
 
 class FieldsService(private val fieldDao: FieldDao) : IFieldService {
-   override val fields: LiveData<List<Field>>
+   override val fields: List<Field>
    get() = fieldDao.getFields()
        /*listOf(
            Field(0, "6. Сектор размножения/ отделение черенкования", 85),

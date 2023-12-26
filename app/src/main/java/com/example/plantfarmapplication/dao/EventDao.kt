@@ -6,6 +6,7 @@ import androidx.room.Delete
 import androidx.room.Query
 import androidx.room.Upsert
 import com.example.plantfarmapplication.model.objects.Event
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface EventDao {
@@ -17,5 +18,5 @@ interface EventDao {
     suspend fun deleteEvent(event: Event)
 
     @Query("SELECT * from event")
-    fun getEvents(): LiveData<List<Event>>
+    fun getEvents(): Flow<List<Event>>
 }

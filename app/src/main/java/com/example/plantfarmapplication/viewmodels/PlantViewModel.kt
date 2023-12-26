@@ -3,13 +3,14 @@ package com.example.plantfarmapplication.viewmodels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.plantfarmapplication.model.objects.Plant
 import com.example.plantfarmapplication.repositories.PlantRepository
 import kotlinx.coroutines.launch
 
 class PlantViewModel (private val repository: PlantRepository) : ViewModel() {
-    val allPlants: LiveData<List<Plant>> = repository.allPlants
+    val allPlants: LiveData<List<Plant>> = repository.allPlants.asLiveData()
 
     fun upsert(plant: Plant) = viewModelScope.launch {
         repository.upsert(plant)

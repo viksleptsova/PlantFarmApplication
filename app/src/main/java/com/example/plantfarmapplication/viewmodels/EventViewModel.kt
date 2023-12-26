@@ -3,13 +3,14 @@ package com.example.plantfarmapplication.viewmodels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.plantfarmapplication.model.objects.Event
 import com.example.plantfarmapplication.repositories.EventRepository
 import kotlinx.coroutines.launch
 
 class EventViewModel (private val repository: EventRepository) : ViewModel() {
-    val allEvents: LiveData<List<Event>> = repository.allEvents
+    val allEvents: LiveData<List<Event>> = repository.allEvents.asLiveData()
 
     fun upsert(event: Event) = viewModelScope.launch {
         repository.upsert(event)
