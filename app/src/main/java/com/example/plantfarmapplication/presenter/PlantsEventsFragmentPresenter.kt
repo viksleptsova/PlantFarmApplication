@@ -24,3 +24,4 @@ class PlantsEventsFragmentPresenter : IPresenter<PlantsFragment> {
     var index = 0
 
 }
+

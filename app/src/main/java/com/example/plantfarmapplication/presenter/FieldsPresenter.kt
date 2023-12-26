@@ -26,7 +26,7 @@ class FieldsPresenter: IPresenter<IFieldsActivityView> {
 
     private var view: IFieldsActivityView? = null
     var fields: LiveData<List<Field>> =  App.fieldsService.fields
-    var fieldsCount: Int = fields.value.size
+    var fieldsCount: Int = fields.value!!.size
 
     private var currentClickedPosition: Int = -1
 

@@ -38,8 +38,8 @@ class FieldInformationActivity () : AppCompatActivity(), View.OnClickListener {
             tab.text = titleList[position]
         }.attach()
 
-
-        setText(App.fieldsService.fields[App.fieldsService.currentClickedDate])
+        // todo надо надо
+       // setText(App.fieldsService.fields[App.fieldsService.currentClickedDate])
     }
 
     private fun setText(field: Field){

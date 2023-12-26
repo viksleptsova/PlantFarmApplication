@@ -11,7 +11,7 @@ import com.example.plantfarmapplication.repositories.RequestRepository
 
 class App: Application() {
 
-    val database by lazy { Database.getInstance(this) }
+    private val database by lazy { Database.getInstance(this) }
     val eventRepository by lazy { EventRepository(database.eventDao()) }
     val fieldRepository by lazy { FieldRepository(database.fieldDao()) }
     val plantRepository by lazy { PlantRepository(database.plantDao()) }

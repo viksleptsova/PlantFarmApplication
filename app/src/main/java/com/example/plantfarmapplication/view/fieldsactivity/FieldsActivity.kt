@@ -55,6 +55,7 @@ class FieldsActivity : AppCompatActivity(), IFieldsActivityView {
    private fun filterList(query: String?) {
        if (query != null) {
            val filteredList = ArrayList<Field>()
+           // todo проблема с LiveDate
            for (field in presenter.fields) {
                if (field.fieldName.lowercase(Locale.ROOT).contains(query)) {
                    filteredList.add(field)

@@ -33,5 +33,6 @@ class FieldsAdapter (private val presenter: FieldsPresenter): RecyclerView.Adapt
         notifyDataSetChanged()
     }
 
+    // проблемы с LiveData
     private var fieldsList: List<Field> = presenter.fields
 }

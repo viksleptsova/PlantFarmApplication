@@ -18,8 +18,8 @@ class FieldsService(private val fieldDao: FieldDao) : IFieldService {
        Field(5, "10. Маточник низко- и среднерослых кустарников", 30),
        Field(6, "11. Демонстрационно маточный участок", 0),
        Field(7, "12. Маточник травянистых многолетников", 20),
-    )*/
-
+    )
+*/
     override var currentClickedDate: Int
         get() = _currentClickedDate
         set(value) {
